@@ -1,12 +1,11 @@
 package saldologs
 
-var saldo float64
+var logs map[int]string
 
-func getSaldo() float64 {
-
-	return saldo
+type log struct {
+	logs map[int]string
 }
 
-func setSaldo(saldo_ float64) {
-	saldo = saldo_
+func adicionarLogs(types string) {
+	logs[len(logs)+1] = types
 }
