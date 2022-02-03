@@ -19,8 +19,18 @@ func Sacar(v float64) string {
 	fmt.Println(log)
 	saldologs.AdicionarLogs(log)
 
-	saldologs.SetSaldo(v)
+	saldologs.Sacar(v)
 	return "Operação realizada"
+}
+
+func Depositar(v float64) string {
+	log := "Depositou " + fmt.Sprintf("%f", v)
+	fmt.Println(log)
+	saldologs.AdicionarLogs(log)
+
+	saldologs.Depositar(v)
+	return "Operação realizada"
+
 }
 
 func TradeToFloat64(v string) (float64, string) {
