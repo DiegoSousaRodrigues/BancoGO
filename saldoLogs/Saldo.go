@@ -7,6 +7,14 @@ func GetSaldo() float64 {
 	return saldo
 }
 
-func SetSaldo(saldo_ float64) {
-	saldo -= saldo_
+func setSaldo(saldo_ float64) {
+	saldo = saldo_
+}
+
+func Sacar(v float64) {
+	setSaldo(saldo - v)
+}
+
+func Depositar(v float64) {
+	setSaldo(saldo + v)
 }

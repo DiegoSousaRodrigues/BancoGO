@@ -1,6 +1,7 @@
 package operacoes
 
 import (
+	"fmt"
 	saldologs "gitHub/saldoLogs"
 	"strconv"
 )
@@ -14,8 +15,22 @@ func Sacar(v float64) string {
 		return "Operação nao realizada, valor de saque maior que o da conta"
 	}
 
-	saldologs.SetSaldo(v)
+	log := "Sacou " + fmt.Sprintf("%f", v)
+	fmt.Println(log)
+	saldologs.AdicionarLogs(log)
+
+	saldologs.Sacar(v)
 	return "Operação realizada"
+}
+
+func Depositar(v float64) string {
+	log := "Depositou " + fmt.Sprintf("%f", v)
+	fmt.Println(log)
+	saldologs.AdicionarLogs(log)
+
+	saldologs.Depositar(v)
+	return "Operação realizada"
+
 }
 
 func TradeToFloat64(v string) (float64, string) {
