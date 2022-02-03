@@ -1,11 +1,11 @@
 package saldologs
 
-var logs map[int]string
+var logs = make(map[int]string)
 
-type log struct {
-	logs map[int]string
+func AdicionarLogs(message string) {
+	logs[len(logs)+1] = message
 }
 
-func adicionarLogs(types string) {
-	logs[len(logs)+1] = types
+func RetornarLogs() map[int]string {
+	return logs
 }

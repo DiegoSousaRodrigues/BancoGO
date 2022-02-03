@@ -1,6 +1,7 @@
 package operacoes
 
 import (
+	"fmt"
 	saldologs "gitHub/saldoLogs"
 	"strconv"
 )
@@ -13,6 +14,10 @@ func Sacar(v float64) string {
 	if VerificarSaldo() < v {
 		return "Operação nao realizada, valor de saque maior que o da conta"
 	}
+
+	log := "Sacou " + fmt.Sprintf("%f", v)
+	fmt.Println(log)
+	saldologs.AdicionarLogs(log)
 
 	saldologs.SetSaldo(v)
 	return "Operação realizada"
